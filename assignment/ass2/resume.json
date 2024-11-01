@@ -1,6 +1,10 @@
 {
   "basics": {
     "name": "Seongeun Park",
+    "favicon": {
+      "ico": "letter-s.ico",
+      "type": "image/x-icon"
+    },
     "image": "images/profile.jpg",
     "email": "seongeup@andrew.cmu.edu",
     "phone": "+1-412-844-0214",
@@ -38,7 +42,7 @@
       "endDate": "Present"
     },
     {
-      "degree": "Research Assistance",
+      "degree": "Research Assistant",
       "field": "",
       "school": "Seoul National University",
       "startDate": "Mar 2023",
@@ -67,7 +71,7 @@
       "endDate": "Feb 2021"
     }
   ],
-  "honors": [
+    "honors": [
     {
       "title": "DSA Best Data Award (First Place)",
       "awarder": "American Society of Civil Engineering (ASCE)",
@@ -285,7 +289,7 @@
     {
       "category": "Deep Learning",
       "items": [
-        "Activity Recognition with Wearable Sensors",
+        "Wearable Sensor-based Activity Recognition",
         "Computer Vision (Object Detection, Depth Estimation, Pose Estimation)",
         "Natural Language Processing",
         "Sound Recognition"
@@ -305,7 +309,7 @@
   "projects": [
     {
       "title": "AI Construction Safety Management Platform Development",
-      "description": "Contributed to the development of an AI model that uses daily construction work plans to estimate accident likelihood.",
+      "description": "Developed an AI model using daily construction work plans to estimate accident likelihood.",
       "duration": {
         "start": "Mar 2023",
         "end": "Present"
@@ -318,7 +322,7 @@
     },
     {
       "title": "Monocular Camera-Based Detection of Suspended Loads in Construction Sites",
-      "description": "In the project's initial phase, aimed at detecting suspended objects at construction sites, a comprehensive dataset was compiled using on-site CCTV footage and web-crawled images.",
+      "description": "Compiled a comprehensive dataset using on-site CCTV footage and web-crawled images for detecting suspended objects at construction sites.",
       "duration": {
         "start": "Jan 2023",
         "end": "Present"
@@ -333,7 +337,7 @@
     },
     {
       "title": "Smart Construction AI Research Center",
-      "description": "Integration of AI and robotics into construction, emphasizing autonomous robot driving, augmented reality interfaces, on-site data capture, AI in bidding processes, and AI-driven hazard identification using CCTV. Additionally, hosted seminars to promote interdisciplinary knowledge exchange.",
+      "description": "Integrated AI and robotics into construction through autonomous robot driving, augmented reality interfaces, on-site data capture, AI bidding processes, and AI-driven hazard identification using CCTV. Hosted seminars to promote interdisciplinary knowledge exchange.",
       "duration": {
         "start": "Jun 2022",
         "end": "Dec 2023"
@@ -422,6 +426,100 @@
         "Machine Learning",
         "Matlab",
         "Python"
+      ]
+    }
+  ],
+  "teaching_experience": [
+    {
+      "course_name": "Architecture and AI (2 semester)",
+      "duration": {
+        "start": "Mar 2023",
+        "end": "June 2023"
+      },
+      "institution": "Seoul National University",
+      "description": "Facilitated hands-on sessions on data preprocessing and machine learning techniques using RapidMiner."
+    }
+  ],
+  "additional_experience": [
+    {
+      "category": "Diverse Programming Coursework",
+      "duration": {
+        "start": "Mar 2016",
+        "end": "Dec 2023"
+      },
+      "description": "Enrolled in courses related to AI programming during undergraduate and graduate studies.",
+      "education": [
+        {
+          "level": "Undergraduate",
+          "count": 7,
+          "items": [
+            "Introduction to Engineering Computer Programming",
+            "Programming Basis",
+            "Object-oriented Programming",
+            "Web and Python Programming",
+            "Easy-to-understand Software Coding",
+            "Computational Thinking",
+            "Discrete Structures"
+          ]
+        },
+        {
+          "level": "Graduate",
+          "credits": 5,
+          "items": [
+            "ICT-Based Smart Architecture",
+            "Theory and Lab of IoT, AI, and Big Data",
+            "Data Analysis and Visualization",
+            "Principles and Application of Data Science",
+            "Machine Learning and Deep Learning for Data Science 1"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Programming Study Group",
+      "duration": {
+        "start": "Mar 2016",
+        "end": "Feb 2021"
+      },
+      "institution": "Kyung Hee University",
+      "group": {
+        "name": "KHlug",
+        "url": "https://khlug.org/activity"
+      },
+      "description": "Participated in weekly Python and C++ study groups. Collaborated on the \"Web Development on Tuesdays\" project."
+    },
+    {
+      "category": "Volunteer Experience",
+      "duration": {
+        "start": "Jul 2012",
+        "end": "Nov 2019"
+      },
+      "totalHours": "158",
+      "activities": [
+        {
+          "organization": "Sunhan Samaritan Orphanage",
+          "duration": {
+            "start": "Mar 2018",
+            "end": "Nov 2019"
+          },
+          "description": "Mentored children through educational volunteer work."
+        },
+        {
+          "organization": "Myeongju Residence for Individuals with Disabilities",
+          "duration": {
+            "start": "Jun 2013",
+            "end": "Jul 2013"
+          },
+          "description": "Assisted residents with disabilities in daily tasks such as bathing, dining, and cleaning. Contributed to their care and comfort, enhancing the quality of their living environment."
+        },
+        {
+          "organization": "Geumchon Elderly Care Facility",
+          "duration": {
+            "start": "Jul 2012",
+            "end": "Jan 2013"
+          },
+          "description": "Provided companionship to the elderly, assisted with meals, and participated in cleaning activities. Played a vital role in enhancing their daily living experience through attentive care and interaction."
+        }
       ]
     }
   ]

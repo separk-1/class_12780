@@ -6,9 +6,9 @@ def load_resume_json(json_file):
     with open(json_file, 'r', encoding='utf-8') as f:
         return json.load(f)
 
-def generate_html(data):
-    """Generate HTML from resume data"""
-    html = '''<!DOCTYPE html>
+def generate_head(data):
+    """Generate HTML head section"""
+    return '''<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -37,8 +37,9 @@ def generate_html(data):
 </head>
 <body style="font-family: 'Montserrat', sans-serif;">'''
 
-    # Navigation
-    html += '''
+def generate_navigation(data):
+    """Generate navigation section"""
+    return f'''
     <nav id="navbar">
         <ul>
             <li><a href="#introduction"><b>SEONGEUN PARK</b></a></li>
@@ -48,12 +49,13 @@ def generate_html(data):
             <li><a href="#skills">SKILLS</a></li>
             <li><a href="#projects">PROJECTS</a></li>
             <li><a href="#experience">EXPERIENCES</a></li>
-            <li class="cv-item"><a href="''' + data['basics']['cvLink'] + '''" target="_blank">CV</a></li>
+            <li class="cv-item"><a href="{data['basics']['cvLink']}" target="_blank">CV</a></li>
         </ul>
     </nav>'''
 
-    # Introduction section
-    html += '''
+def generate_introduction(data):
+    """Generate introduction section"""
+    html = '''
     <section id="introduction">
         <div class="profile-container">
             <div class="profile-image">
@@ -65,20 +67,19 @@ def generate_html(data):
                 <h2>''' + data['basics']['name'] + '''</h2>
                 <p>'''
     
-    # Social profiles
     for profile in data['basics']['profiles']:
         html += f'''<a href="{profile['url']}" {'target="_blank"' if profile['network'] != "Email" else ''} title="{profile['network']}" style="margin-right: 10px;"><i class="{profile['icon']} fa-2x"></i></a>'''
     
-    html += '''
+    html += f'''
                 </p>
-                <p class="email-info"><b>Email</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;''' + data['basics']['email'] + '''</p>
-                <p><b>Tel</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;''' + data['basics']['phone'] + '''</p>
-                <p><b>Research Interests</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;''' + data['basics']['interest'] + '''</p>
-                <p><a href="''' + data['basics']['cvLink'] + '''" target="_blank"><b><span style="color:#B11226;">Resume</span></b></a></p>
+                <p class="email-info"><b>Email</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{data['basics']['email']}</p>
+                <p><b>Tel</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{data['basics']['phone']}</p>
+                <p><b>Research Interests</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{data['basics']['interest']}</p>
+                <p><a href="{data['basics']['cvLink']}" target="_blank"><b><span style="color:#B11226;">Resume</span></b></a></p>
                 <br>
             </div>
         </div>'''
-
+    
     # Mobile Alert
     html += '''
         <div id="mobileAlert" style="display: none; background-color: rgba(0,0,0,0.8); color: white; text-align: center; padding: 20px; position: fixed; top: 0; left: 0; width: 100%; z-index: 9999;">
@@ -87,9 +88,11 @@ def generate_html(data):
             <button onclick="document.getElementById('mobileAlert').style.display='none'">Close</button>
         </div>
     </section>'''
+    return html
 
-    # Education section
-    html += '''
+def generate_education(data):
+    """Generate education section"""
+    html = '''
     <section id="education">
         <h2>EDUCATION & EXPERIENCE</h2>'''
     
@@ -104,9 +107,11 @@ def generate_html(data):
     
     html += '''
     </section>'''
+    return html
 
-    # Honors section
-    html += '''
+def generate_honors(data):
+    """Generate honors section"""
+    html = '''
     <section id="honors">
         <h2>HONORS</h2>'''
     
@@ -116,9 +121,11 @@ def generate_html(data):
     
     html += '''
     </section>'''
+    return html
 
-    # Publications section
-    html += '''
+def generate_publications(data):
+    """Generate publications section"""
+    html = '''
     <section id="publication">
         <h2>PUBLICATIONS</h2>'''
     
@@ -145,9 +152,11 @@ def generate_html(data):
     
     html += '''
     </section>'''
+    return html
 
-    # Skills section
-    html += '''
+def generate_skills(data):
+    """Generate skills section"""
+    html = '''
     <section id="skills">
         <h2>SKILLS</h2>
         <ul>'''
@@ -162,9 +171,11 @@ def generate_html(data):
     html += '''
         </ul>
     </section>'''
+    return html
 
-    # Project section
-    html += '''
+def generate_projects(data):
+    """Generate projects section"""
+    html = '''
     <section id="projects">
         <h2>ACADEMIC PROJECTS</h2>
         <ul>'''
@@ -192,36 +203,119 @@ def generate_html(data):
     html += '''
         </ul>
     </section>'''
+    return html
 
-    # Footer and scripts
-    html += '''
-    <p style="padding-left: 30px;">
-        <b>Please feel free to contact me anytime.<br>
-        <a href="#introduction">Seongeun Park</a></b>
-    </p>
+def generate_footer():
+    """Generate footer section"""
+    html = '''
+        <p style="padding-left: 30px;">
+            <b>Please feel free to contact me anytime.<br>
+            <a href="#introduction">Seongeun Park</a></b>
+        </p>
 
-    <div id="backToTopRight" style="display: block; position: fixed; bottom: 50px; right: 30px; cursor: pointer;">
-        <i class="fas fa-arrow-up fa-2x"></i>
-    </div>
+        <div id="backToTopRight" style="display: block; position: fixed; bottom: 50px; right: 30px; cursor: pointer;">
+            <i class="fas fa-arrow-up fa-2x"></i>
+        </div>
 
-    <script src="script.js" defer></script>
-    
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('.image-slider').slick({
-                dots: false,
-                infinite: true,
-                speed: 300,
-                slidesToShow: 1,
-                adaptiveHeight: true,
-                nextArrow: '<button type="button" class="slick-next">❯</button>',
-                prevArrow: false
+        <script src="script.js" defer></script>
+        
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('.image-slider').slick({
+                    dots: false,
+                    infinite: true,
+                    speed: 300,
+                    slidesToShow: 1,
+                    adaptiveHeight: true,
+                    nextArrow: '<button type="button" class="slick-next">❯</button>',
+                    prevArrow: false
+                });
             });
-        });
-    </script>
-</body>
-</html>'''
+        </script>
+    </body>
+    </html>'''
+    
+    return html
 
+def generate_teaching_experience(data):
+    """Generate teaching experience section HTML with check icon"""
+    html = '''
+    <section id="teaching_experience">
+        <h2>TEACHING EXPERIENCE</h2>
+        <ul>'''
+    
+    for teaching in data['teaching_experience']:
+        html += f'''
+            <li>
+                <h3><i class="fas fa-check"></i> {teaching['course_name']}</h3>
+                <p class="experience-period">{teaching['duration']['start']} – {teaching['duration']['end']}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{teaching['institution']}</p>
+                <p class="experience-description">{teaching['description']}</p>
+            </li>
+            <br>'''
+    
+    html += '''
+        </ul>
+    </section>'''
+    return html
+
+def generate_additional_experience(data):
+    """Generate additional experience section HTML"""
+    html = '''
+    <section id="experience">
+        <ul>
+        <h2>ADDITIONAL EXPERIENCE</h2>'''
+    
+    for exp in data['additional_experience']:
+        html += f'''
+        <li>
+            <i class="fas fa-chevron-down toggle-icon"></i>
+            <h3 class="project-title">{exp['category']}</h3>
+            <div class="project-detail">'''
+
+        if exp['category'] == "Diverse Programming Coursework":
+            html += f'''
+                <p>{exp['duration']['start']} – {exp['duration']['end']}</p>
+                <p>{exp['description']}<br>'''
+            for edu in exp['education']:
+                html += f'''
+                {edu['level']} ({len(edu['items'])} credits): {', '.join(edu['items'])}<br>'''
+            html += '</p>'
+
+        elif exp['category'] == "Programming Study Group":
+            html += f'''
+                <p>{exp['duration']['start']} – {exp['duration']['end']}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{exp['institution']}, <a href="{exp['group']['url']}" target="_blank"><b>{exp['group']['name']}</b></a></p>
+                <p>{exp['description']}</p>'''
+
+        elif exp['category'] == "Volunteer Experience":
+            html += f'''
+                <p>{exp['duration']['start']} – {exp['duration']['end']}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{exp['totalHours']} hours</p>'''
+            for activity in exp['activities']:
+                html += f'''
+                <p><b>{activity['organization']} ({activity['duration']['start']} - {activity['duration']['end']})</b>: {activity['description']}</p>'''
+
+        html += '''
+            </div>
+        </li>
+        <br>'''
+    
+    html += '''
+        </ul>
+    </section>'''
+    return html
+
+def generate_html(data):
+    """Generate complete HTML"""
+    html = generate_head(data)
+    html += generate_navigation(data)
+    html += generate_introduction(data)
+    html += generate_education(data)
+    html += generate_honors(data)
+    html += generate_publications(data)
+    html += generate_skills(data)
+    html += generate_projects(data)
+    html += generate_teaching_experience(data)
+    html += generate_additional_experience(data)
+    html += generate_footer()
     return html
 
 def main():
@@ -230,13 +324,9 @@ def main():
         return
     
     try:
-        # Load JSON data
         resume_data = load_resume_json('resume.json')
-        
-        # Generate HTML
         html_content = generate_html(resume_data)
         
-        # Write to file
         with open('index.html', 'w', encoding='utf-8') as f:
             f.write(html_content)
         
