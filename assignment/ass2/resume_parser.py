@@ -278,7 +278,7 @@ def generate_additional_experience(data):
                 <p>{exp['description']}<br>'''
             for edu in exp['education']:
                 html += f'''
-                {edu['level']} ({len(edu['items'])} credits): {', '.join(edu['items'])}<br>'''
+                <strong>{edu['level']} ({len(edu['items'])} courses)</strong>: {', '.join(edu['items'])}<br>'''
             html += '</p>'
 
         elif exp['category'] == "Programming Study Group":
