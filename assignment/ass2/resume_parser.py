@@ -46,10 +46,8 @@ def generate_navigation(data):
             <li><a href="#education">EDUCATION</a></li>
             <li><a href="#honors">HONORS</a></li>
             <li><a href="#publication">PUBLICATIONS</a></li>
-            <li><a href="#skills">SKILLS</a></li>
             <li><a href="#projects">PROJECTS</a></li>
-            <li><a href="#experience">EXPERIENCES</a></li>
-            <li class="cv-item"><a href="{data['basics']['cvLink']}" target="_blank">CV</a></li>
+            <li><a href="#experience">TEACHING</a></li>
         </ul>
     </nav>'''
 
@@ -75,7 +73,6 @@ def generate_introduction(data):
                 <p class="email-info"><b>Email</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{data['basics']['email']}</p>
                 <p><b>Tel</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{data['basics']['phone']}</p>
                 <p><b>Research Interests</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{data['basics']['interest']}</p>
-                <p><a href="{data['basics']['cvLink']}" target="_blank"><b><span style="color:#B11226;">Resume</span></b></a></p>
                 <br>
             </div>
         </div>'''
@@ -151,25 +148,6 @@ def generate_publications(data):
         html += '</p>'
     
     html += '''
-    </section>'''
-    return html
-
-def generate_skills(data):
-    """Generate skills section"""
-    html = '''
-    <section id="skills">
-        <h2>SKILLS</h2>
-        <ul>'''
-    
-    for skill in data['skills']:
-        html += f'''
-            <li>
-                <h3><i class="fas fa-check"></i>{skill['category']}</h3>
-                <p>{', '.join(skill['items'])}</p>
-            </li>'''
-    
-    html += '''
-        </ul>
     </section>'''
     return html
 
@@ -258,51 +236,6 @@ def generate_teaching_experience(data):
     </section>'''
     return html
 
-def generate_additional_experience(data):
-    """Generate additional experience section HTML"""
-    html = '''
-    <section id="experience">
-        <ul>
-        <h2>ADDITIONAL EXPERIENCE</h2>'''
-    
-    for exp in data['additional_experience']:
-        html += f'''
-        <li>
-            <i class="fas fa-chevron-down toggle-icon"></i>
-            <h3 class="project-title">{exp['category']}</h3>
-            <div class="project-detail">'''
-
-        if exp['category'] == "Diverse Programming Coursework":
-            html += f'''
-                <p>{exp['duration']['start']} – {exp['duration']['end']}</p>
-                <p>{exp['description']}<br>'''
-            for edu in exp['education']:
-                html += f'''
-                <strong>{edu['level']} ({len(edu['items'])} courses)</strong>: {', '.join(edu['items'])}<br>'''
-            html += '</p>'
-
-        elif exp['category'] == "Programming Study Group":
-            html += f'''
-                <p>{exp['duration']['start']} – {exp['duration']['end']}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{exp['institution']}, <a href="{exp['group']['url']}" target="_blank"><b>{exp['group']['name']}</b></a></p>
-                <p>{exp['description']}</p>'''
-
-        elif exp['category'] == "Volunteer Experience":
-            html += f'''
-                <p>{exp['duration']['start']} – {exp['duration']['end']}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{exp['totalHours']} hours</p>'''
-            for activity in exp['activities']:
-                html += f'''
-                <p><b>{activity['organization']} ({activity['duration']['start']} - {activity['duration']['end']})</b>: {activity['description']}</p>'''
-
-        html += '''
-            </div>
-        </li>
-        <br>'''
-    
-    html += '''
-        </ul>
-    </section>'''
-    return html
-
 def generate_html(data):
     """Generate complete HTML"""
     html = generate_head(data)
@@ -311,10 +244,8 @@ def generate_html(data):
     html += generate_education(data)
     html += generate_honors(data)
     html += generate_publications(data)
-    html += generate_skills(data)
     html += generate_projects(data)
     html += generate_teaching_experience(data)
-    html += generate_additional_experience(data)
     html += generate_footer()
     return html
 

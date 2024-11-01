@@ -30,8 +30,7 @@
         "url": "https://www.linkedin.com/in/separk111",
         "icon": "fab fa-linkedin"
       }
-    ],
-    "cvLink": "https://docs.google.com/document/d/1G00YiSXdVPfE_zyvTM-Am8gC01RMHK1fkbA2RRC1DAs/edit?usp=sharing"
+    ]
   },
   "education": [
     {
@@ -79,7 +78,7 @@
     },
     {
       "title": "Brain Korea 21 Plus Fellowship",
-      "awarder": "National Research Foundation of Korea(NRF)",
+      "awarder": "National Research Foundation of Korea (NRF)",
       "year": "2023"
     },
     {
@@ -104,18 +103,6 @@
     }
   ],
     "publications": [
-      {
-        "authors": [
-          {"name": "Park, S.", "isMainAuthor": true},
-          {"name": "Lee, H."},
-          {"name": "Park, M."},
-          {"name": "Ahn, C. R."}
-        ],
-        "year": "2024",
-        "title": "Human-Independent Activity Recognition in Construction based on Variational Autoencoder and Wearable Motion Sensors",
-        "journal": "Automation in Construction",
-        "status": "In progress"
-      },
       {
         "authors": [
           {"name": "Jeong, G."},
@@ -256,56 +243,6 @@
         "journal": "Journal of the Architectural Institute of Korea"
       }
     ],
-  "skills": [
-    {
-      "category": "Programming Experience",
-      "items": [
-        "Python (8 years)",
-        "HTML/CSS/JavaScript (2 years)",
-        "C/C++ (2 years)",
-        "R (1 year)",
-        "MATLAB (1 year)",
-        "SQL (1 year)",
-        "PHP (1 year)"
-      ]
-    },
-    {
-      "category": "Programming Libraries & Frameworks",
-      "items": ["Numpy", "Pandas", "Tensorflow", "Pytorch"]
-    },
-    {
-      "category": "Software & Tools",
-      "items": [
-        "Tableau",
-        "LaTeX",
-        "Vensim",
-        "AnyLogic",
-        "Git",
-        "Linux",
-        "SPSS",
-        "Scan-to-BIM"
-      ]
-    },
-    {
-      "category": "Deep Learning",
-      "items": [
-        "Wearable Sensor-based Activity Recognition",
-        "Computer Vision (Object Detection, Depth Estimation, Pose Estimation)",
-        "Natural Language Processing",
-        "Sound Recognition"
-      ]
-    },
-    {
-      "category": "Data Skills",
-      "items": [
-        "Data Mining",
-        "Visualization",
-        "Statistical Analysis",
-        "Web Scraping",
-        "API retrieval"
-      ]
-    }
-  ],
   "projects": [
     {
       "title": "AI Construction Safety Management Platform Development",
@@ -431,96 +368,13 @@
   ],
   "teaching_experience": [
     {
-      "course_name": "Architecture and AI (for 2 semester)",
+      "course_name": "Teaching Assistant - Architecture and AI",
       "duration": {
         "start": "Mar 2023",
-        "end": "June 2023"
+        "end": "June 2023 (2 semesters)"
       },
       "institution": "Seoul National University",
       "description": "Facilitated hands-on sessions on data preprocessing and machine learning techniques using RapidMiner."
-    }
-  ],
-  "additional_experience": [
-    {
-      "category": "Diverse Programming Coursework",
-      "duration": {
-        "start": "Mar 2016",
-        "end": "Dec 2023"
-      },
-      "description": "Enrolled in courses related to AI programming during undergraduate and graduate studies.",
-      "education": [
-        {
-          "level": "Undergraduate",
-          "count": 7,
-          "items": [
-            "Introduction to Engineering Computer Programming",
-            "Programming Basis",
-            "Object-oriented Programming",
-            "Web and Python Programming",
-            "Easy-to-understand Software Coding",
-            "Computational Thinking",
-            "Discrete Structures"
-          ]
-        },
-        {
-          "level": "Graduate",
-          "credits": 5,
-          "items": [
-            "ICT-Based Smart Architecture",
-            "Theory and Lab of IoT, AI, and Big Data",
-            "Data Analysis and Visualization",
-            "Principles and Application of Data Science",
-            "Machine Learning and Deep Learning for Data Science 1"
-          ]
-        }
-      ]
-    },
-    {
-      "category": "Programming Study Group",
-      "duration": {
-        "start": "Mar 2016",
-        "end": "Feb 2021"
-      },
-      "institution": "Kyung Hee University",
-      "group": {
-        "name": "KHlug",
-        "url": "https://khlug.org/activity"
-      },
-      "description": "Participated in weekly Python and C++ study groups. Collaborated on the \"Web Development on Tuesdays\" project."
-    },
-    {
-      "category": "Volunteer Experience",
-      "duration": {
-        "start": "Jul 2012",
-        "end": "Nov 2019"
-      },
-      "totalHours": "158",
-      "activities": [
-        {
-          "organization": "Sunhan Samaritan Orphanage",
-          "duration": {
-            "start": "Mar 2018",
-            "end": "Nov 2019"
-          },
-          "description": "Mentored children through educational volunteer work."
-        },
-        {
-          "organization": "Myeongju Residence for Individuals with Disabilities",
-          "duration": {
-            "start": "Jun 2013",
-            "end": "Jul 2013"
-          },
-          "description": "Assisted residents with disabilities in daily tasks such as bathing, dining, and cleaning. Contributed to their care and comfort, enhancing the quality of their living environment."
-        },
-        {
-          "organization": "Geumchon Elderly Care Facility",
-          "duration": {
-            "start": "Jul 2012",
-            "end": "Jan 2013"
-          },
-          "description": "Provided companionship to the elderly, assisted with meals, and participated in cleaning activities. Played a vital role in enhancing their daily living experience through attentive care and interaction."
-        }
-      ]
     }
   ]
 }
