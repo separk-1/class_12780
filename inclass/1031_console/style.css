@@ -1,0 +1,15 @@
+#myDiv {
+    width: 200px;
+    height: 100px;
+    background-color: rgb(197, 191, 23);
+    text-align: center;
+    line-height: 100px;
+    margin-top: 20px;
+    opacity: 1;
+    overflow: hidden;
+}
+
+#myDiv.hidden {
+    opacity: 0;
+    height: 0;
+}
