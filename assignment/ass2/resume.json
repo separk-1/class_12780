@@ -1,0 +1,183 @@
+{
+  "basics": {
+    "name": "Seongeun Park",
+    "image": "images/me3.jpg",
+    "email": "seongeup@andrew.cmu.edu",
+    "phone": "+1-412-844-0214",
+    "summary": "Construction Safety, Human-Robot Interaction, Knowledge Transfer, Domain Adaptation, Generative AI",
+    "profiles": [
+      {
+        "network": "Email",
+        "url": "mailto:seongeup@andrew.cmu.edu",
+        "icon": "fas fa-envelope"
+      },
+      {
+        "network": "GitHub",
+        "url": "https://github.com/separk-1",
+        "icon": "fab fa-github"
+      },
+      {
+        "network": "Google Scholar",
+        "url": "https://scholar.google.com/citations?user=G1eiHDcAAAAJ&hl=ko",
+        "icon": "fab fa-google"
+      },
+      {
+        "network": "LinkedIn",
+        "url": "https://www.linkedin.com/in/separk111",
+        "icon": "fab fa-linkedin"
+      }
+    ],
+    "cvLink": "https://docs.google.com/document/d/1G00YiSXdVPfE_zyvTM-Am8gC01RMHK1fkbA2RRC1DAs/edit?usp=sharing"
+  },
+  "education": [
+    {
+      "degree": "Doctor of Philosophy",
+      "field": "Civil and Environmental Engineering",
+      "school": "Carnegie Mellon University",
+      "startDate": "Aug 2024",
+      "endDate": "Present"
+    },
+    {
+      "degree": "Research Assistance",
+      "field": "",
+      "school": "Seoul National University",
+      "startDate": "Mar 2023",
+      "endDate": "May 2024",
+      "link": {
+        "text": "SNUCEM",
+        "url": "https://cem.snu.ac.kr/"
+      }
+    },
+    {
+      "degree": "Master of Science",
+      "field": "Architectural Engineering",
+      "school": "Seoul National University",
+      "startDate": "Mar 2021",
+      "endDate": "Feb 2023",
+      "link": {
+        "text": "SNUCEM",
+        "url": "https://cem.snu.ac.kr/"
+      }
+    },
+    {
+      "degree": "Bachelor of Science",
+      "field": "Architectural Engineering",
+      "school": "Kyung Hee University",
+      "startDate": "Mar 2016",
+      "endDate": "Feb 2021"
+    }
+  ],
+  "honors": [
+    {
+      "title": "DSA Best Data Award (First Place)",
+      "awarder": "American Society of Civil Engineering (ASCE)",
+      "year": "2024"
+    },
+    {
+      "title": "Brain Korea 21 Plus Fellowship",
+      "awarder": "National Research Foundation of Korea(NRF)",
+      "year": "2023"
+    },
+    {
+      "title": "Engineering Education Research Foundation Scholarship",
+      "awarder": "Seoul National University",
+      "year": "2023"
+    },
+    {
+      "title": "Merit-based Scholarship",
+      "awarder": "Seoul National University",
+      "year": "2023"
+    },
+    {
+      "title": "English Language Proficiency Scholarship",
+      "awarder": "Kyung Hee University",
+      "year": "2020"
+    },
+    {
+      "title": "National Student Science & Invention Competition",
+      "awarder": "Minister's Award",
+      "year": "2014"
+    }
+  ],
+  "publications": [
+    {
+      "authors": [
+        {"name": "Park, S.", "isMainAuthor": true},
+        {"name": "Lee, H."},
+        {"name": "Park, M."},
+        {"name": "Ahn, C. R."}
+      ],
+      "year": "2024",
+      "title": "Human-Independent Activity Recognition in Construction based on Variational Autoencoder and Wearable Motion Sensors",
+      "journal": "Automation in Construction",
+      "status": "In progress"
+    },
+    {
+      "authors": [
+        {"name": "Jeong, G."},
+        {"name": "Park, S.", "isMainAuthor": false},
+        {"name": "Lee, J."},
+        {"name": "Ahn, C. R."}
+      ],
+      "year": "2024",
+      "title": "HangCon: A New Benchmark Dataset for Hanging Object Detection in Construction Sites",
+      "journal": "Journal of Computing in Civil Engineering",
+      "links": [
+        {
+          "text": "Github",
+          "url": "https://github.com/separk-1/HOD"
+        }
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "category": "Programming Experience",
+      "items": [
+        "Python (8 years)",
+        "HTML/CSS/JavaScript (2 years)",
+        "C/C++ (2 years)",
+        "R (1 year)",
+        "MATLAB (1 year)",
+        "SQL (1 year)",
+        "PHP (1 year)"
+      ]
+    },
+    {
+      "category": "Programming Libraries & Frameworks",
+      "items": ["Numpy", "Pandas", "Tensorflow", "Pytorch"]
+    },
+    {
+      "category": "Software & Tools",
+      "items": [
+        "Tableau",
+        "LaTeX",
+        "Vensim",
+        "AnyLogic",
+        "Git",
+        "Linux",
+        "SPSS",
+        "Scan-to-BIM"
+      ]
+    },
+    {
+      "category": "Deep Learning",
+      "items": [
+        "Activity Recognition with Wearable Sensors",
+        "Computer Vision (Object Detection, Depth Estimation, Pose Estimation)",
+        "Natural Language Processing",
+        "Sound Recognition"
+      ]
+    },
+    {
+      "category": "Data Skills",
+      "items": [
+        "Data Mining",
+        "Visualization",
+        "Statistical Analysis",
+        "Web Scraping",
+        "API retrieval"
+      ]
+    }
+  ]
+}

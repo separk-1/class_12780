@@ -1,0 +1,364 @@
+body {
+    font-family: 'Montserrat', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #2C2A29;
+    line-height: 1.6;
+    font-size: 1.2rem;
+}
+
+header {
+    background-color: #2C2A29;
+    color: #F8F8F8;
+    padding: 10px 20px;
+    text-align: left;
+    font-size: 2.0rem;
+    padding-top: 80px;  /* 메뉴 아이콘 공간 확보를 위한 패딩 추가 */
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin: 20px 10 0;
+    text-align: left;
+
+}
+
+.gray-text {
+    padding-left: 20ch;
+    color: #888B8D;
+}
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+section {
+    background-color: #f8f8f8;  /* 배경색 */
+    margin: 30px 0;  /* 상하 마진 */
+    padding: 50px;  /* 패딩 */
+    border-radius: 8px;  /* 모서리 둥글게 */
+}
+
+
+h2 {
+    font-size: 1.8em;
+    color: #2C2A29;
+}
+
+h3 {
+    font-size: 1.1em;
+}
+
+p {
+    padding-left: 30px;
+    margin: 10px 0;
+    font-size: 1.2rem;
+    text-indent: 0;
+}
+
+/* 링크의 기본 스타일 */
+a {
+    color: #2c2a29; /* 기본 링크 색상 */
+    text-decoration: none; /* 밑줄 제거 */
+  }
+  
+  /* 링크에 마우스를 올렸을 때 스타일 */
+  a:hover {
+    color: #B11226; /* 강조된 링크 색상 */
+  }
+  
+
+ul {
+    list-style-type: none; /* 기본 리스트 스타일 제거 */
+    padding: 0;
+}
+
+li {
+    padding-left: 5px; /* 아이콘과 텍스트 사이의 간격 */
+    margin-bottom: 10px; /* 항목 간 간격 */
+}
+
+li .fas {
+    color: green; /* 체크 아이콘 색상 */
+    margin-right: 10px; /* 아이콘과 텍스트 사이의 간격 */
+}
+
+
+footer {
+    background-color: #2C2A29;
+    color: #F8F8F8;
+    text-align: center;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+
+
+#navbar {
+    /*background: linear-gradient(to right, #00274c, #2d4458);*/
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+    z-index: 800;
+    background-color: #B11226;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    top: 0;
+    overflow: hidden;
+}
+
+#navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar ul li {
+    transition: transform 0.3s; /* 부드러운 이동 효과 */
+    float: left;
+    margin-right: 40px; /* 오른쪽 마진 추가 */
+}
+
+#navbar ul li a {
+    font-size: 1.2rem;
+    padding: 15px 15px; /* 패딩 조정 */
+    transition: background-color 0.3s, color 0.3s; /* 부드러운 색상 전환 효과 */
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 14px;
+    text-decoration: none;
+}
+
+#navbar ul li a:hover {
+    /* background-color: #f8f8f8; 호버 시 배경색 */
+    /* color: black; 호버 시 글자색 */
+    color: #888B8D; 
+}
+
+#navbar a[href="#introduction"]:hover {
+    color: #ffffff; 
+    font-weight: bold;
+}
+
+
+i.fas, i.fab {
+    color: #2C2A29;  /* LinkedIn의 브랜드 색상 */
+    margin-right: 8px;  /* 아이콘과 텍스트 사이의 간격 */
+}
+
+.profile-container {
+    display: flex; /* Flexbox를 사용하여 두 열을 나란히 배치합니다 */
+    justify-content: space-between; /* 두 열 사이에 공간을 만듭니다 */
+    margin-bottom: 20px;  /* 이미지와 아래 텍스트 간의 간격 확보 */
+    height: auto;  /* 높이를 자동으로 설정하여 내용에 맞게 조절합니다 */
+    flex-direction: column;  /*내용을 수직으로 배열합니다 */
+    align-items: left;  /* 내용을 수평 중앙으로 정렬합니다 */
+    margin-left: 20px; /* 이미지를 오른쪽으로 20px 밀기 */
+}
+
+p {
+    margin-top: 10px;  /* 이미지와 아이콘 사이의 간격을 조절합니다 */
+}
+
+.profile-info {
+    /*flex: 1; /* 두 열이 동일한 너비를 가지도록 합니다 */
+    /*order: 2;
+}
+
+.profile-image {
+    flex: 1; /* 두 열이 동일한 너비를 가지도록 합니다 */
+    order: 1; /* 이미지를 텍스트의 왼쪽에 위치시킵니다 */
+    margin-right: 20px; /* 이미지와 텍스트 사이의 간격을 조절합니다 */
+}
+
+.profile-image img {
+    position: relative;  /* 이미지의 위치를 조절합니다. */
+    margin-right: 200px; /* 이미지만 오른쪽으로 40px 밀었습니다 */
+    width: 280px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 1%; /* 원형 이미지를 만듭니다 */
+    transition: opacity 1s ease-in-out;  /* 부드러운 변환 효과 */
+}
+
+.hidden {
+    opacity: 0;
+}
+
+
+/* 모바일 스타일 */
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 1rem; /* 기본 글꼴 크기 조정 */
+        margin-left: -30px;  /* 좌측 패딩 조정 */
+        margin-right: -30px; /* 우측 패딩 조정 */
+    }
+    
+    header {
+        font-size: 1.6rem; /* 헤더 글꼴 크기 조정 */
+    }
+    
+    h2 {
+        font-size: 1.4em; /* h2 태그 글꼴 크기 조정 */
+    }
+
+    h3 {
+        font-size: 1em; /* h3 태그 글꼴 크기 조정 */
+    }
+
+    p{
+        font-size: 1rem; 
+    }
+    
+    #navbar {
+        display: none; /* 네비게이션 바 숨김 */
+      }
+
+    li, #navbar ul li a {
+        font-size: 1rem;
+    }
+
+    .profile-image img {
+        margin-right: 0;  /* 마진 제거 */
+        width: 100%;      /* 이미지 너비 조정 */
+    }
+    .email-info {
+        display: none;
+    }
+
+    .gray-text {
+        padding-left: 0ch;
+        color: #7c7c7c;
+        font-size: 0.8rem;
+    }
+    
+    #mobileAlert {
+        display: block;
+    }
+    .profile-image, .custom-image, .custom-image2 {
+        /* width: 80%; 이미지 크기 조정 */
+        margin: 0 auto; /* 이미지 중앙 정렬 */
+    }
+    nav li {
+        float: none;
+        width: 100%;
+        display: none;  /* 기본적으로 메뉴 항목을 숨깁니다 */
+    }
+
+    .profile-container img {
+        width: 100%;
+        height: auto;
+    }
+
+    .image-link {
+        display: block;
+    }
+
+    img:not(.profile-image) {
+        display: none;  /* 모든 이미지를 숨깁니다 */
+    }
+}
+
+    
+/* 태블릿 스타일 */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    nav li {
+        float: none;
+        width: 100%;
+    }
+
+    .profile-container img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.toggle-icon {
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.custom-image {
+    width: 40%;
+    height: auto;
+    object-fit: contain;
+}
+
+.custom-image2 {
+    width: 40%;
+    height: auto;
+    object-fit: contain;
+}
+
+.project-title {
+    display: inline-block;
+    margin: 0;
+    cursor: pointer;
+}
+
+.project-detail {
+    max-height: 1500px;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    display: none; 
+}
+
+.project-detail.open {
+    max-height: 1500px;
+    display: block; 
+}
+
+
+@keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+.fade-out {
+    animation-name: fadeOut;
+    animation-duration: 5s; /* or any duration you want */
+    animation-fill-mode: forwards;
+}
+
+#profileImage {
+    transition: opacity 1s ease-in-out;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.slick-next {
+    position: absolute;      /* 절대 위치 지정 */
+    bottom: -30px;           /* 버튼을 아래로 이동 */
+    transform: translateY(0); /* 중앙 정렬 제거 */
+    border-radius: 50%;      /* 버튼 모서리 둥글게 */
+    width: 30px;             /* 버튼 너비 */
+    height: 30px;            /* 버튼 높이 */
+    line-height: 30px;       /* 버튼 텍스트 수직 정렬 */
+    text-align: center;      /* 버튼 텍스트 수평 정렬 */
+    color: #2C2A29;          /* 버튼 텍스트 색상 */
+    background-color: #f8f8f8; /* 버튼 배경색 */
+    font-size: 24px;         /* 버튼 텍스트 크기 조정 */
+    top: auto;               /* 상위 요소 중앙 위치 제거 */
+    right: 10px;             /* 이미지 바로 오른쪽에 버튼 위치 */
+    z-index: 1000;           /* 다른 요소 위에 버튼 표시 */
+    border: none;            /* 버튼 테두리 제거 */
+    cursor: pointer;         /* 커서 포인터로 변경 */
+}
+
+.slick-next:hover {
+    color: #B11226;  /* 버튼 색상 (흰색) */
+}
+
+/* 네비게이션 바의 CV 항목 스타일링 */
+.cv-item a {
+    color: #888B8D; /* 텍스트 색상 설정 */
+}
