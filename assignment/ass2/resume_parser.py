@@ -73,7 +73,7 @@ def generate_html(data):
                 </p>
                 <p class="email-info"><b>Email</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;''' + data['basics']['email'] + '''</p>
                 <p><b>Tel</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;''' + data['basics']['phone'] + '''</p>
-                <p><b>Research Interests</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;''' + data['basics']['summary'] + '''</p>
+                <p><b>Research Interests</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;''' + data['basics']['interest'] + '''</p>
                 <p><a href="''' + data['basics']['cvLink'] + '''" target="_blank"><b><span style="color:#B11226;">Resume</span></b></a></p>
                 <br>
             </div>
@@ -163,24 +163,34 @@ def generate_html(data):
         </ul>
     </section>'''
 
-    # Add static content (Vision section)
+    # Project section
     html += '''
-    <section id="vision">
-        <h2>Tackling Data Scarcity in Sensing for Construction Safety: Generation and Adaptation</h2>
-        <div class="image-slider">
-            <div><img src="images/idea1.PNG" class="custom-image2" alt="vision1"></div>
-            <div><img src="images/idea2.PNG" class="custom-image2" alt="vision2"></div>
-            <div><img src="images/idea3.PNG" class="custom-image2" alt="vision3"></div>
-        </div>
-        <br>
-        While building large-scale datasets, I realized that constructing datasets demands a significant amount of time and resources.<br>
-        Inspired by this, I have conceptualized research in Human Activity Recognition (HAR) based on Inertial Measurement Unit (IMU) data.<br>
-        My idea centers on generating virtual humans using text-based motion generation models like MotionDiffuse, which would involve collecting angular velocity and acceleration data from these virtual entities.<br>
-        This theoretical approach could significantly reduce the need for manual labeling and enable the generation of a diverse data range, including accident scenarios.<br>
-        <br>
-        However, as virtual data may not always align with actual field data, I envisage applying my domain adaptation technology to potentially enhance performance in real-world environments.<br>
-        My ultimate goal with this concept is to address the issue of data scarcity in the construction field and advocate for the future deployment of AI models in real-world construction sites.<br>
-        Additionally, this idea includes integrating text, image, and IMU data, aiming to pave the way for utilizing a variety of data types in the construction industry.<br>
+    <section id="projects">
+        <h2>ACADEMIC PROJECTS</h2>
+        <ul>'''
+    
+    for project in data['projects']:
+        html += f'''
+            <li>
+                <h3><i class="fas fa-check"></i> {project['title']}</h3>
+                <p>
+                {project['description']}<br>'''
+        
+        if 'image' in project:
+            html += f'''<img src="{project['image']['src']}" class="{project['image']['class']}" alt="{project['image']['alt']}">'''
+        
+        html += f'''
+                <b>Duration</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{project['duration']['start']} – {project['duration']['end']}<br>'''
+        
+        if 'sponsor' in project:
+            html += f'''<b>Sponsor</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{project['sponsor']}<br>'''
+        
+        html += f'''<b>Skills</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{', '.join(project['skills'])}</p>
+                <br>
+            </li>'''
+    
+    html += '''
+        </ul>
     </section>'''
 
     # Footer and scripts
