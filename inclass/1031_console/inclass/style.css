@@ -40,6 +40,17 @@ h2 {
   background-color: #0056b3;
 }
 
+/* Added styles for correct and wrong answers */
+.option.correct {
+  background-color: #033d20;
+  pointer-events: none;
+}
+
+.option.wrong {
+  background-color: #7e0909;
+  pointer-events: none;
+}
+
 #next-button {
   padding: 10px;
   margin-top: 10px;
@@ -49,4 +60,8 @@ h2 {
   color: #fff;
   cursor: pointer;
   display: none;
+}
+
+#next-button:hover {
+  background-color: #218838;
 }

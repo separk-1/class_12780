@@ -1,5 +1,3 @@
-// script.js
-
 // Questions array
 const questions = [
   {
@@ -31,6 +29,9 @@ const questionElement = document.getElementById("question");
 const optionsElements = document.querySelectorAll(".option");
 const nextButton = document.getElementById("next-button");
 
+// Add event listener for the next button
+nextButton.addEventListener('click', nextQuestion);
+
 function loadQuestion() {
   const currentQuestion = questions[currentQuestionIndex];
   questionElement.textContent = currentQuestion.question;
@@ -38,6 +39,8 @@ function loadQuestion() {
   optionsElements.forEach((button, index) => {
     button.textContent = currentQuestion.options[index];
     button.classList.remove("correct", "wrong");
+    // Re-enable buttons for the next question
+    button.style.pointerEvents = "auto";
   });
 
   nextButton.style.display = "none";
@@ -47,9 +50,12 @@ function selectAnswer(selectedIndex) {
   const correctIndex = questions[currentQuestionIndex].answer;
 
   optionsElements.forEach((button, index) => {
+    // Disable all buttons after an answer is selected
+    button.style.pointerEvents = "none";
+    
     if (index === correctIndex) {
       button.classList.add("correct");
-    } else {
+    } else if (index === selectedIndex) {
       button.classList.add("wrong");
     }
   });
