@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Summary</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1>Bridge Inspection Score Summary</h1>
+    <p>This scatter plot shows inspection scores over time.</p>
+    <img src="{{ url_for('static', filename='inspection_plot.png') }}" alt="Inspection Scores Over Time" style="max-width: 100%; height: auto;" />
+</div>
+{% endblock %}

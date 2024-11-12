@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Update Inspection</title>
+{% endblock %}
+
+
+
+{% block body %}
+<div class="update">
+    <h1>Update bridge inspection report</h1>
+    
+    <form action="/update/{{bridge.id}}" method="POST">
+        <input type="text" name="name" id="name" value="{{bridge.name}}"/>
+        <input type="submit" value="Update" />
+    </form>
+</div>
+</body>
+{% endblock %}

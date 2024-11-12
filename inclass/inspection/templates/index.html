@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Bridges</title>
+{% endblock %}
+
+
+
+{% block body %}
+<div class="inspection">
+    <h1>Bridge Inspection Reports</h1>
+    {% if bridges|length < 1%}
+    <h4>There are no reports... create one below</h4>
+    {% else %}
+    <table>
+        <tr>
+            <th>Bridge Name</th>
+            <th>Inspected</th>
+            <th>Actions</th>
+        </tr>
+        {% for bridge in bridges %}
+            <tr>
+                <td>{{ bridge.name }}</td>
+                <td>{{ bridge.date_created.strftime("%Y-%m-%d") }}</td>
+                <td>
+                    <a href="/update/{{bridge.id}}">Update</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    <form action="/" method="POST">
+        <input type="text" name="name" id="name" />
+        <input type="submit" value="Add bridge" id="add_btn"/>
+    </form>
+</div>
+</body>
+{% endblock %}
