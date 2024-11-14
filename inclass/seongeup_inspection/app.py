@@ -1,4 +1,5 @@
-#  In the CSS, the .content class is used, but in the HTML, the .inspection class is used, so the styling is not being applied.
+# In the CSS, the .content class is used, but in the HTML, the .inspection class is used, so the styling is not being applied.
+# Therefore, I changed <div class="inspection"> to <div class="content"> in index.html
 
 from flask import Flask, render_template, request,redirect
 from flask_sqlalchemy import SQLAlchemy
