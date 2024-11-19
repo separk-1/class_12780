@@ -16,7 +16,7 @@ data['Rainfall'] = ((data['Sensor 1 Rainfall (mm)'] + data['Sensor 2 Rainfall (m
 data['Year'] = data['Date'].dt.year
 
 # Find the maximum rainfall for each year
-annual_max = data.groupby('Year')['Rainfall'].min()
+annual_max = data.groupby('Year')['Rainfall'].max()
 
 
 # Step 4: Rank-Based Frequency Analysis for 10-Year and 100-Year Storms
