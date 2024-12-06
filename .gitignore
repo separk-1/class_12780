@@ -1,3 +1,5 @@
 *.csv
 *.xls
 assignment/ass4/Linna/*
+*.gz
+assignment/ass5/data
